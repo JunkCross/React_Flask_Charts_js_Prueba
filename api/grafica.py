@@ -130,11 +130,11 @@ def send_data():
         while True:
             # Si es la primera vez que se ejecuta, obtener los últimos 5 segundos
             if last_sent_timestamp is None:
-                from_date = datetime.now() - timedelta(seconds=5)
+                from_date = datetime.utcnow() - timedelta(seconds=5)
             else:
                 from_date = last_sent_timestamp
 
-            to_date = datetime.now()
+            to_date = datetime.utcnow()
             #print(from_date)
             #print(to_date)
             data = get_data(from_date, to_date)

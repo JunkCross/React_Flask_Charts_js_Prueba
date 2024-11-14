@@ -1,3 +1,15 @@
+# Configuracion Principal
+
+Dentro de la sección "Configuracion de red e Internet", dentro de la opcion de Red en Ethernet, se tiene que cambiar la confiracion de Publico a Privado.
+
+Luego de realizar la configuracion, hay que ingresar a "Firewall y protección de red" y en la Opcion de "Red privada" hay que desactivarla.
+
+Al tener los 2 pasos anteriores en el archivo "package.json" en la seccion de "proxy" hay que cambiar la ip por su propia ip, el cambio de ip tambien se tiene que realizar en el archivo App.js dentro de la carpeta "src" en la seccion de codigo "const socket = io("http://192.168.0.39:5000")"
+
+Por ultimo, para ejecutar el archivo "grafica_ingles.py" ejeculte directamente con python y NO utilice Flask. Ya que al ejecutar la aplicación con Flask run, el nombre de la aplicación nunca será principal, por lo que la aplicación nunca se ejecutará en el host 0.0.0.0.
+
+# ------------------------------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

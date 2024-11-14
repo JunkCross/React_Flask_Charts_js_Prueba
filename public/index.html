@@ -1,43 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Datos GRAFANA</title>
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link rel="stylesheet" href="%PUBLIC_URL%/static/style.css" />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Contenedor donde React renderizará la aplicación -->
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    
+    <!-- Estructura del dashboard -->
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class='bx bx-microchip'></i>
+        <span class="logo_name">Datos</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <button class="btn btn-primary create-dashboard-btn">Crear nuevo dashboard</button>
+        </li>
+        <li>
+          <a href="#" class="active">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <nav>
+        <div class="sidebar-button">
+          <i class="bx bx-menu sidebarBtn"></i>
+          <span class="dashboard">Mini-Bioreactor</span>
+        </div>
+      </nav>
+      <div class="home-content">
+        <div class="overview-boxes">
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic"></div>
+              <div class="number" id="temperature"></div>
+            </div>
+            <i class="bx bxs-thermometer readings"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="number" id="humidity"></div>
+            </div>
+            <i class="bx bxs-droplet-half readings two"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="number" id="CO2"></div>
+            </div>
+            <i class="bx bxs-tachometer readings three"></i>
+          </div>
+        </div>
+        <div class="graph-box">
+          <div class="history-charts">
+            <div class="title">History Charts</div>
+            <div class="history-details">
+              <div class="history-col-item">
+                <div id="temperature-history" class="history-divs"></div>
+                <div id="humidity-history" class="history-divs"></div>
+                <div id="pressure-history" class="history-divs"></div>
+              </div>
+            </div>
+          </div>
+          <div class="gaugeCharts">
+            <div class="title">Gauge Charts</div>
+            <div class="gauge-list">
+              <div class="gauge-box"><div id="temperature-gauge"></div></div>
+              <div class="gauge-box"><div id="humidity-gauge"></div></div>
+              <div class="gauge-box"><div id="pressure-gauge"></div></div>
+              <div class="gauge-box"><div id="altitude-gauge"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <!-- Script para el funcionamiento adicional -->
+    <script src="static/main.js"></script>
   </body>
 </html>
