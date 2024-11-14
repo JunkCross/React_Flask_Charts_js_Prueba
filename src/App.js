@@ -84,7 +84,13 @@ function App() {
       <div className="gaugeCharts">
         {metrics.map(metric => (
           <div key={metric} className="gauge-box" id={`${metric}-gauge`}>
-            <GaugeChart id={`${metric}-gauge-chart`} nrOfLevels={20} percent={(latestReadings[metric]?.value || 0) / 100} />
+            <GaugeChart id={`${metric}-gauge-chart`} nrOfLevels={40} 
+              colors={["#28a745"]}
+              arcWidth={0.4} // Ajustar el grosor del arco
+              needleColor="#34568B" // Color de la aguja
+              needleBaseColor="#888888" // Color de la base de la aguja
+              textColor="#000000" percent={(latestReadings[metric]?.value || 0) / 100} 
+            />
           </div>
         ))}
       </div>
